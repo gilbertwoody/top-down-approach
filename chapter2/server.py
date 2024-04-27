@@ -21,7 +21,7 @@ while True:
 
         #Send one HTTP header line into socket
         connectionSocket.send("HTTP/1.1 200 OK\r\n".encode())
-        connectionSocket.send(f"Date: { strftime('%a, %d-%b-%y %H:%m:%S %z') }\r\n".encode())
+        connectionSocket.send(f"Date: { strftime('%a, %d-%b-%y %H:%M:%S %z') }\r\n".encode())
         connectionSocket.send("\r\n".encode())
         
         #Send the content of the requested file to the client
@@ -31,7 +31,7 @@ while True:
         
     except IOError:
         connectionSocket.send("HTTP/1.1 404 Not Found\r\n".encode())
-        connectionSocket.send(f"Date: { strftime('%a, %d-%b-%y %H:%m:%S %z') }\r\n".encode())
+        connectionSocket.send(f"Date: { strftime('%a, %d-%b-%y %H:%M:%S %z') }\r\n".encode())
     finally:
         #Close client socket
         connectionSocket.close()
